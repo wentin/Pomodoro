@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'champagne';
+    src: url('../font/champagne_limousines.eot');
+    src: url('../font/champagne_limousines.eot?#iefix') format('embedded-opentype'),
+         url('../font/champagne_limousines.woff') format('woff'),
+         url('../font/champagne_limousines.ttf') format('truetype'),
+         url('../font/champagne_limousines.svg#champagne__limousinesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: "champagne", "Myriad Pro", Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px 0px #ffffff; 	
+	color: #666666;
+	margin: 0;
+	padding: 0;
+	background-color: #efefef;
+}
+
+iframe {
+	border: solid 0px #ffffff;	
+}
+
+input {
+	font-family: "champagne", "Myriad Pro", Arial, Helvetica, sans-serif;	
+}
+.clr {
+	clear: both;	
+}
+
+.hidden {
+	display: none;
+}

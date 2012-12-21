@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pomodoro</title>
+
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<link type="text/css" rel="stylesheet" href="css/data.css"/>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/raphael.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/analytics.js"></script>
+<script type="text/javascript" src="js/dots.js"></script>
+<script type="text/javascript" src="js/task.js"></script>
+
+
+	<style type="text/css" media="screen">
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    	<div class="person">
+        	<div class="icon">
+            </div>
+            <div class="name">
+            	<h1>Tashia Zhang<span class="medal"></span></h1>
+                <h2><strong>TODAY</strong>: <span class="red">11</span> pomodoros     <strong>ALL</strong>: <span class="red">712</span> pomodoros</h2>
+            </div>
+            <div class="clr"></div>
+        </div>
+        
+        <div class="tabWrapper">
+        	<a href="#task" class="tab active">Tasks</a>
+            |
+        	<a href="#dataVisualization" class="tab">Data Visualization</a>
+            |
+        	<a href="#" class="tab">Teammates</a>
+        </div>
+        
+        <div id="task" class="tabContent active">
+        	<!--<div class="title">
+            	Tasks
+            </div>-->
+       	  <div class="taskWrapper">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr class="first">
+                    <td>CG Modeling final project</td>
+                    <td align="right">
+                    	<i class="complete"></i><i class="complete"></i><i class="complete"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Maya poligon section tutorial</td>
+                    <td align="right">
+                    	<i class="complete"></i><i class="complete"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Infonexys app UI design</td>
+                    <td align="right">
+                    	<i class="complete"></i><i class="complete"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>SSGA meeting material prep </td>
+                    <td align="right">
+                    	<i class="complete"></i><i class="complete"></i><i class="complete"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Major studio final project coding</td>
+                    <td align="right">
+                    	<i class="complete"></i><i class="ongoing"></i><i></i><i></i><i></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Paper writing for design for the century</td>
+                    <td align="right">
+                    	<i></i><i></i><i></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Major studio presentation prep</td>
+                    <td align="right">
+                    	<i></i><i></i>
+                    </td>
+                  </tr>
+                  <tr class="add">
+                    <td>
+                    <input type="text" placeholder="Quickly type here" id="quickTask"/>
+                    </td>
+                    <td align="right">
+                    	<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </td>
+                  </tr>
+                </table>
+            </div>
+        </div>
+        
+      <div id="dataVisualization" class="tabContent active">
+            <div class="title first">
+                Self: Monthly Statistics of December, 2012  	
+            </div>
+            <table id="data">
+                <tfoot>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th>16</th>
+                        <th>17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>19</th>
+                        <th>20</th>
+                        <th>22</th>
+                        <th>23</th>
+                        <th>24</th>
+                        <th>25</th>
+                        <th>26</th>
+                        <th>27</th>
+                        <th>28</th>
+                        <th>29</th>
+                        <th>30</th>
+                        <th>31</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>17</td>
+                        <td>15</td>
+                        <td>24</td>
+                        <td>29</td>
+                        <td>29</td>
+                        <td>17</td>
+                        <td>17</td>
+                        <td>24</td>
+                        <td>24</td>
+                        <td>21</td>
+                        <td>26</td>
+                        <td>23</td>
+                        <td>12</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>19</td>
+                        <td>7</td>
+                        <td>13</td>
+                        <td>16</td>
+                        <td>15</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>10</td>
+                        <td>18</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="holder"></div>
+            
+            <div class="title">
+                Self: Weekly Statistics of All History
+            </div>
+            <table id="for-chart">
+                <tfoot>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th>12am</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12pm</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th scope="row">Mon</th>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>15</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>17</td>
+                        <td>23</td>
+                        <td>14</td>
+                        <td>12</td>
+                        <td>20</td>
+                        <td>16</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Tue</th>
+                        <td>35</td>
+                        <td>11</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>20</td>
+                        <td>29</td>
+                        <td>5</td>
+                        <td>34</td>
+                        <td>51</td>
+                        <td>41</td>
+                        <td>26</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>29</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Wed</th>
+                        <td>24</td>
+                        <td>31</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>21</td>
+                        <td>7</td>
+                        <td>5</td>
+                        <td>17</td>
+                        <td>23</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>10</td>
+                        <td>38</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Thu</th>
+                        <td>12</td>
+                        <td>20</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>24</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>2</td>
+                        <td>27</td>
+                        <td>10</td>
+                        <td>31</td>
+                        <td>18</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>39</td>
+                        <td>3</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fri</th>
+                        <td>38</td>
+                        <td>18</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>&nbsp;</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>25</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>40</td>
+                        <td>38</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>15</td>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sat</th>
+                        <td>10</td>
+                        <td>15</td>
+                        <td>18</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>45</td>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>34</td>
+                        <td>10</td>
+                        <td>21</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sun</th>
+                        <td>8</td>
+                        <td>11</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>26</td>
+                        <td>3</td>
+                        <td>28</td>
+                        <td>23</td>
+                        <td>3</td>
+                        <td>31</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>1</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="chart"></div>
+            
+            <div class="title">
+                with Friends
+            </div>
+            <table class="withFriend" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>1</td>
+                <td width="80" align="center"><img src="i/headIcon2.png" width="55" height="55"></td>
+                <td>Kate Green</td>
+                <td width="300" align="right"><span class="red">136</span> pomodoros together</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td align="center"><img src="i/headIcon1.png" width="55" height="55"></td>
+                <td>Lucy Smith</td>
+                <td align="right"><span class="red">110</span> pomodoros together</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td align="center"><img src="i/headIcon5.png" width="55" height="55"></td>
+                <td>John McCann</td>
+                <td align="right"><span class="red">77</span> pomodoros together</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td align="center"><img src="i/headIcon4.png" width="55" height="55"></td>
+                <td>Chris Shea</td>
+                <td align="right"><span class="red">71</span> pomodoros together</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td align="center"><img src="i/headIcon3.png" width="55" height="55"></td>
+                <td>Viki Stevens</td>
+                <td align="right"><span class="red">60</span> pomodoros together</td>
+              </tr>
+            </table>
+            
+            <div class="leaderBoards">
+              <div class="leaderBoardFriend fakeScroll">
+                    <div class="title">
+                        Leaderboard (Friends)
+                    </div>  
+                    <div class="tableWrapper">          	
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>13</td>
+                        <td><img src="i/smallHeadIcon1.png" width="50" height="50"></td>
+                        <td>Angelyn Carew</td>
+                        <td align="right"><span class="red">821</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>14</td>
+                        <td><img src="i/smallHeadIcon2.png" width="50" height="50"></td>
+                        <td>Kate Green</td>
+                        <td align="right"><span class="red">800</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>15</td>
+                        <td><img src="i/smallHeadIcon3.png" width="50" height="50"></td>
+                        <td>Edmund Mccool</td>
+                        <td align="right"><span class="red">769</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>16</td>
+                        <td><img src="i/smallHeadIcon4.png" width="50" height="50"></td>
+                        <td>Lucy Smith</td>
+                        <td align="right"><span class="red">750</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td class="green">17</td>
+                        <td><img src="i/smallHeadIcon15.png" width="50" height="50"></td>
+                        <td class="green">YOU</td>
+                        <td align="right"><span class="red">712</span> pomodoros</td>
+                        <td><img src="i/up.png" width="22" height="22"></td>
+                      </tr>
+                      <tr>
+                        <td>18</td>
+                        <td><img src="i/smallHeadIcon6.png" width="50" height="50"></td>
+                        <td>Chris Shea</td>
+                        <td align="right"><span class="red">702</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>19</td>
+                        <td><img src="i/smallHeadIcon7.png" width="50" height="50"></td>
+                        <td>Gwyn Pelto</td>
+                        <td align="right"><span class="red">694</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td><img src="i/smallHeadIcon8.png" width="50" height="50"></td>
+                        <td>Viki Stevens</td>
+                        <td align="right"><span class="red">684</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>21</td>
+                        <td><img src="i/smallHeadIcon9.png" width="50" height="50"></td>
+                        <td>Sadye Danos</td>
+                        <td align="right"><span class="red">678</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>22</td>
+                        <td><img src="i/smallHeadIcon10.png" width="50" height="50"></td>
+                        <td>Malcolm Bonk</td>
+                        <td align="right"><span class="red">662</span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    </div>
+                </div>
+                <div class="leaderBoaardGlobal fakeScroll2">
+                    <div class="title">
+                        Leaderboard (Global)
+                    </div>   
+                    <div class="tableWrapper">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>843</td>
+                        <td><img src="i/smallHeadIcon11.png" width="50" height="50"></td>
+                        <td>Bert Caufield</td>
+                        <td align="right"><span class="red">725 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>844</td>
+                        <td><img src="i/smallHeadIcon12.png" width="50" height="50"></td>
+                        <td>Kaitlyn Dutcher</td>
+                        <td align="right"><span class="red">723 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>845</td>
+                        <td><img src="i/smallHeadIcon13.png" width="50" height="50"></td>
+                        <td>Lakia Shortridge</td>
+                        <td align="right"><span class="red">716 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>846</td>
+                        <td><img src="i/smallHeadIcon14.png" width="50" height="50"></td>
+                        <td>Kirstin Reel</td>
+                        <td align="right"><span class="red">715 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td class="green">847</td>
+                        <td><img src="i/smallHeadIcon15.png" width="50" height="50"></td>
+                        <td class="green">YOU</td>
+                        <td align="right"><span class="red">712</span> pomodoros</td>
+                        <td><img src="i/down.png" width="22" height="22"></td>
+                      </tr>
+                      <tr>
+                        <td>848</td>
+                        <td><img src="i/smallHeadIcon16.png" width="50" height="50"></td>
+                        <td>Garret Seaborn</td>
+                        <td align="right"><span class="red">710 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>849</td>
+                        <td><img src="i/smallHeadIcon17.png" width="50" height="50"></td>
+                        <td>Arletta Todaro</td>
+                        <td align="right"><span class="red">705 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>850</td>
+                        <td><img src="i/smallHeadIcon18.png" width="50" height="50"></td>
+                        <td>Darrel Simone</td>
+                        <td align="right"><span class="red">700 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>851</td>
+                        <td><img src="i/smallHeadIcon19.png" width="50" height="50"></td>
+                        <td>Jesse Pujol</td>
+                        <td align="right"><span class="red">699 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>852</td>
+                        <td><img src="i/smallHeadIcon20.png" width="50" height="50"></td>
+                        <td>Hilda Ferrara</td>
+                        <td align="right"><span class="red">697 </span> pomodoros</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>      	
+                    </div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>        
+</div>
+</body>
+</html>

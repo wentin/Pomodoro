@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-size: 20px;
+}
+.wrapper {
+	width: 800px;
+	margin: 10px auto 50px auto;	
+}
+#holder {
+	height: 250px;
+	width: 800px;
+	margin: 0 auto 0 auto;
+	text-shadow: 0 0 0 #000;
+}		
+#chart {
+	color: #333;
+	margin: 0 auto 0 auto;
+	width: 300px;
+	width: 800px;
+	text-shadow: 0 0 0 #000;
+}
+
+.person .icon {
+	background-image: url(../i/player0.png);
+	float: left;
+	height: 110px;
+	width: 100px;
+}
+.person .name {
+	float: left;
+}
+.person .name h1 {
+	font-size: 36px;
+	font-weight: normal;
+	padding: 17px 60px 0 0;
+	margin: 0px;
+	display: inline-block;
+	position: relative;
+}
+.medal {
+	background-image: url(../i/medal.png);
+	height: 50px;
+	width: 50px;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 7px;
+}
+.person .name h2 {
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+.red {
+	color: #d10606;
+}
+.green {
+	color: #bad424;
+	font-weight: bold;
+}	
+.title.first {
+	margin-top: 20px;
+}
+.title {
+	font-size: 30px;
+	padding-left: 34px;
+	margin-top: 40px;
+}
+.withFriend {
+	font-size: 24px;	
+	table-layout: fixed;
+	margin-left: 24px;
+}
+.leaderBoardFriend {
+	float: left;
+	width: 385px;	
+}
+.leaderBoaardGlobal {
+	float: right;
+	width: 385px;	
+}
+.leaderBoards table td{
+	border-bottom: #a8a8a8 dashed 1px;
+	border-top: #ffffff dashed 1px;
+}
+.leaderBoards table {
+	border-collapse: separate;
+}
+
+.tableWrapper {
+	display: block;
+	margin-top: 15px;
+	border-top: #a8a8a8 dashed 1px;
+	border-bottom: #ffffff dashed 1px;
+	margin-left: 24px;
+}
+
+.taskWrapper {
+	border-top: solid 2px #c0d33e;
+	border-bottom: #ffffff dashed 1px;
+	margin: 30px 24px 0 24px;
+}
+.taskWrapper table {
+	border-top: solid 2px #ffffff;	
+}
+
+.taskWrapper table td{
+	height: 40px;
+	border-bottom: #a8a8a8 dashed 1px;
+	border-top: #ffffff dashed 1px;
+}
+.taskWrapper table tr.first td{
+	border-top: #ffffff dashed 0px;	
+}
+.taskWrapper table td input{
+	border: solid 0px #efefef;	
+	background: url(../i/input.png) no-repeat left top transparent;
+	width: 470px;
+	height: 24px;
+	line-height: 24px;
+	padding: 3px 10px ;
+	font-size: 20px;
+	color: #666666;
+	text-shadow: 0 1px 0px #ffffff; 
+}
+.taskWrapper table td i {
+	display: inline-block;
+	width:28px;
+	height: 30px;
+	background: url(../i/checkIcon.png) no-repeat top left;
+	margin-top: 5px;
+}
+.taskWrapper table td i.ongoing {
+	background: url(../i/checkIcon.png) no-repeat left -30px;		
+}
+.taskWrapper table td i.complete {
+	background: url(../i/checkIcon.png) no-repeat left -60px;		
+}
+
+.taskWrapper table tr.add td i {
+	background: url(../i/checkIcon.png) no-repeat left -90px;	
+	cursor: pointer;	
+}
+.taskWrapper table tr.add td i.set {
+	background: url(../i/checkIcon.png) no-repeat left top;	
+}
+
+.tabWrapper {
+	margin:0 auto;
+	width: 450px;
+	height: 60px;
+	background: url(../i/toggleButton.png) no-repeat left top;
+	font-size: 30px;
+	line-height: 60px;
+	padding: 0 35px;
+	text-align: center;
+	color: #aaa;
+}
+.tabWrapper .tab{
+	display: inline-block;
+	text-decoration: none;
+	color: #666666;
+	margin: 0 6px;
+}
+.tabWrapper .tab:hover, .tabWrapper .tab.active{
+	color: #c0d33e;
+}
+.tabContent {
+	display: none;	
+}
+.tabContent.active {
+	display: block;	
+}

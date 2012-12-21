@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pomodoro</title>
+  
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+<!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/raphael.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="base">
+        <div id="holder"></div>
+    	<div class="mask"></div>
+        <div class="dial">
+        	<div class="dataButton">View Data</div>
+        </div>
+        <div id="teammates">
+        	<!--<div class="teammate" id="player1">            
+            </div>
+        	<div class="teammate" id="player2">            
+            </div>-->
+        	<div class="teammate" id="player3">            
+            </div><!--
+       	  	<div class="teammate" id="player4">            
+            </div>-->
+      	</div>
+    </div>
+    <div class="button start">start</div>
+    <div class="bar">
+    </div>
+</div>
+<div id="overlay">
+	<div id="overholder">
+    	<div id="overcolor"></div>
+        <div id="overcontent">
+        	<iframe src="data.html" width="100%" height="100%"></iframe>
+            <div class="closeButton">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

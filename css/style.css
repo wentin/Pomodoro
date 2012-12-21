@@ -1,0 +1,143 @@
+.wrapper {
+	margin: 20px auto;
+	width: 800px;
+}
+.wrapper .base {
+	background: url(../i/base.png) no-repeat center center;
+	height: 540px;
+	width: 580px;
+	position: relative;
+	margin: 0 auto;
+}
+.wrapper .base .mask {
+	background: url(../i/mask.png) no-repeat center center;
+	height: 540px;
+	width: 580px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#holder {
+	height: 540px;
+	width: 540px;
+	margin: 0 20px;
+}
+.wrapper .base .dial {
+	background-image: url(../i/center.png);
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	left: 140px;
+	top: 120px;
+	/*-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);*/
+}
+.dial .dataButton {
+	height: 130px;
+	width: 130px;
+	margin: 85px;
+	line-height: 136px;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 0 2px 1px #ffffff;
+	cursor: pointer;
+}
+.wrapper .button {
+	background-image: url(../i/button.png);
+	height: 130px;
+	width: 130px;
+	margin: 0 auto;
+	cursor: pointer;
+	line-height: 136px;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 0 2px 1px #ffffff;
+}
+.wrapper .button:hover {
+	color: #bad424;
+}
+.wrapper .bar {
+	background-image: url(../i/bar.png);
+	height: 60px;
+	width: 540px;
+	margin: 20px auto 0 auto;
+	padding: 0 20px;
+}
+.wrapper .bar span {
+	background: url(../i/pomodoroIcon.png) center center;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+}
+#overlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+    width:100%;
+    z-index:10000;
+}
+
+#overlay #overholder {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    z-index:15000;
+}
+
+#overlay #overcolor{
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:#000000;
+    opacity: 0.6;
+    moz-opacity: 0.6;
+    filter: alpha(opacity=60);
+    width:100%;
+}
+
+#overlay #overcontent {
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 820px;
+	height: auto;
+	z-index: 11;
+}
+#overlay #overcontent .closeButton {
+	width: 60px;
+	height: 60px;
+	background: url(../i/closeButton.png) center center;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+.teammate {
+	height: 110px;
+	width: 100px;
+	position: absolute;
+	display: block;
+}
+.teammate#player1 {
+	background: url(../i/player1.png) top left transparent;	
+	top: 77px;
+	left: 75px;
+}
+.teammate#player2 {
+	background: url(../i/player2.png) top left transparent;
+	top: 158px;
+	left: 46px;
+}
+.teammate#player3 {
+	background: url(../i/player3.png) top left transparent;
+	top: 97px;
+	left: 408px;
+}
+.teammate#player4 {
+	background: url(../i/player4.png) top left transparent;
+	top: 369px;
+	left: 224px;
+}
